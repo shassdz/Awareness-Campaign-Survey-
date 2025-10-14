@@ -1,0 +1,736 @@
+
+
+/* Mobile-First Base (All Devices: iPhone SE, A51, 12 Pro, Laptops) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    color: #000;
+    overflow-x: hidden;
+    touch-action: manipulation; /* Faster taps on iOS/Android */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.watermark-wrapper {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sticky Header with Progress Bar – Horizontal on Most Mobiles */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: #FFF;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 15px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 10px; /* Space between logos/title */
+}
+
+.logo {
+    max-width: 80px; /* Base for medium mobiles (A51/12 Pro) */
+    height: auto;
+    object-fit: contain; /* Prevents distortion */
+    image-rendering: -webkit-optimize-contrast; /* Sharp on iOS */
+    filter: contrast(1.1) brightness(1.05); /* Enhance clarity without over-saturation */
+    flex-shrink: 0;
+}
+
+.title-section {
+    flex: 1;
+    text-align: center;
+    margin: 0 10px;
+    min-width: 0; /* Allows text wrap on small screens */
+}
+
+.title-section h1 {
+    color: #007A33;
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap; /* Wrap icon/text if needed */
+}
+
+.title-section p {
+    font-size: 0.85rem;
+    margin: 2px 0;
+    color: #666;
+    font-style: italic;
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-label {
+    font-size: 0.8rem;
+    color: #007A33;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #E8F5E8;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007A33, #CE1126);
+    width: 0%;
+    transition: width 0.3s ease; /* Smooth on all devices */
+    border-radius: 3px;
+}
+
+/* Main Survey Content – Cards for Modern Look */
+.survey-main {
+    padding: 15px;
+    max-width: 100%;
+}
+
+.survey-card {
+    background: #FFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Lighter shadow on mobile for speed */
+    margin-bottom: 20px;
+    padding: 20px;
+    border-left: 4px solid #007A33;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Wrap step on very small screens */
+}
+
+.section-header h2 {
+    color: #007A33;
+    font-size: 1.1rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.section-step {
+    background: #E8F5E8;
+    color: #007A33;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.question {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* === Open-ended text answer === */
+.open-answer {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  resize: vertical; /* allows resizing vertically only */
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.open-answer:focus {
+  border-color: #007A33;
+  outline: none;
+  background: #f9fffa;
+}
+
+/* === Name question styling === */
+.name-question {
+  margin-bottom: 30px;
+}
+
+/* Wrapper for the input */
+.name-field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f9fffa;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+/* Input field itself */
+.name-field input[type="text"] {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+}
+
+/* When user focuses inside */
+.name-field:focus-within {
+  border-color: #007A33;
+  box-shadow: 0 0 8px rgba(0, 122, 51, 0.2);
+  background: #ffffff;
+}
+
+/* Placeholder text */
+.name-field input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* === General input question styles === */
+.name-question,
+.phone-question {
+  margin-bottom: 25px;
+}
+
+/* Shared field styling */
+.name-field,
+.phone-field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f9fffa;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.name-field input,
+.phone-field input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Focus effect */
+.name-field:focus-within,
+.phone-field:focus-within {
+  border-color: #007A33;
+  box-shadow: 0 0 8px rgba(0, 122, 51, 0.2);
+  background: #ffffff;
+}
+
+/* Placeholder text */
+.name-field input::placeholder,
+.phone-field input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Red asterisk for required fields */
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+
+.question.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.phone-question {
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+
+.question label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 1rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #F8F9FA;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+    min-height: 52px; /* Larger touch target for SE/A51 */
+    border: 1px solid transparent;
+}
+
+.option-item:hover:not(:active),
+.option-item:active {
+    background: #E8F5E8;
+    border-color: #007A33;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    accent-color: #007A33;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: auto; /* Consistent on iOS */
+}
+
+input[type="text"] {
+    flex: 1;
+    margin-left: 12px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* No iOS zoom */
+    min-height: 40px;
+}
+
+.select-styled,
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #E8F5E8;
+    border-radius: 8px;
+    font-size: 16px; /* Prevents zoom on focus */
+    min-height: 52px; /* Touch-friendly */
+    background: #FFF;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none; /* iOS consistency */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.select-styled:focus,
+input[type="text"]:focus {
+    border-color: #007A33;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.1);
+}
+
+.fact {
+    background: #E8F5E8;
+    padding: 12px;
+    border-radius: 8px;
+    font-style: italic;
+    color: #005A26;
+    margin-top: 15px;
+    border-left: 3px solid #007A33;
+}
+
+/* Submit Button – Full-Width on Mobile */
+.submit-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #CE1126, #A60D1F);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 52px;
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(206, 17, 38, 0.3);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.submit-btn:hover:not(:active),
+.submit-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(206, 17, 38, 0.4);
+}
+
+/* Footer */
+.thank-you-footer {
+    background: #E8F5E8;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.thank-you-footer h2 {
+    color: #007A33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.thank-you-footer p {
+    color: #333;
+    font-style: italic;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.thank-you-footer.hidden {
+    display: none;
+}
+
+/* Very Small Mobile (iPhone SE: ≤414px) – Stack Header, Compact Logos */
+@media (max-width: 414px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .logo {
+        max-width: 50px; /* Smaller for SE clarity/space */
+        order: 1; /* Logos first in stack */
+    }
+    
+    .title-section {
+        margin: 0;
+        order: 2;
+        width: 100%;
+    }
+    
+    .title-section h1 {
+        font-size: 1rem;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .title-section p {
+        font-size: 0.8rem;
+    }
+    
+    .survey-main {
+        padding: 10px;
+    }
+    
+    .survey-card {
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.05); /* Lighter for performance */
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .section-step {
+        align-self: flex-end;
+    }
+    
+    .option-item {
+        padding: 14px; /* Extra touch space on SE */
+        min-height: 56px;
+    }
+    
+    .submit-btn {
+        min-height: 56px;
+        padding: 18px 24px;
+    }
+}
+
+/* Medium Mobile (iPhone 12 Pro/A51: 415px - 767px) – Horizontal Header, Clear Logos */
+@media (min-width: 415px) and (max-width: 767px) {
+    .logo {
+        max-width: 80px; /* Balanced for A51/12 Pro */
+    }
+    
+    .header-content {
+        flex-wrap: nowrap; /* Keep horizontal */
+    }
+    
+    .title-section h1 {
+        font-size: 1.2rem;
+    }
+    
+    .survey-main {
+        padding: 20px;
+    }
+    
+    .survey-card {
+        padding: 25px;
+    }
+    
+    .option-item {
+        min-height: 50px;
+    }
+}
+
+/* Tablet/Laptop (768px+) – Spacious, Horizontal Everything */
+@media (min-width: 768px) {
+    .sticky-header {
+        padding: 15px 30px;
+    }
+    
+    .logo {
+        max-width: 120px; /* Larger on tablet */
+    }
+    
+    .title-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .title-section p {
+        font-size: 1rem;
+    }
+    
+    .survey-main {
+        padding: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .survey-card {
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .options {
+        gap: 10px;
+    }
+    
+    .option-item {
+        padding: 15px;
+        min-height: auto; /* Mouse-friendly */
+    }
+    
+    .submit-btn {
+        width: auto;
+        max-width: none;
+        min-height: 50px;
+    }
+    
+    /* Enable hover on non-touch */
+    @media (hover: hover) {
+        .option-item:hover {
+            background: #E8F5E8;
+            border-color: #007A33;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        max-width: 150px; /* Full size on laptops */
+    }
+    
+    .survey-main {
+        padding: 40px;
+    }
+    
+    .survey-card {
+        padding: 40px;
+    }
+    
+    .header-content {
+        gap: 20px;
+    }
+}
+
+/* Landscape Mode (Rotated Phones: SE/12 Pro/A51) – Prevent Overflow */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sticky-header {
+        padding: 8px 15px;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .logo {
+        max-width: 60px; /* Compact in landscape */
+    }
+    
+    .title-section h1 {
+        font-size: 1rem;
+    }
+    
+    .survey-card {
+        padding: 15px;
+    }
+    
+    .options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 8px;
+    }
+    
+    .option-item {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* High-DPI Devices (iPhone 12 Pro Retina, A51) – Crisp Logos/Borders */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        image-rendering: crisp-edges; /* Extra sharpness */
+    }
+    
+    .survey-card {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* Finer shadows */
+    }
+    
+    input[type="radio"],
+    input[type="checkbox"] {
+        border-width: 0.5px; /* Crisp edges */
+    }
+}
+
+/* Watermark (Optional – Add Effect from Previous Response) */
+.watermark-wrapper::before {
+    /* Paste your text/image watermark CSS here if desired */
+    content: "";
+    /* ... */
+}
+
+/* Hide Footer Until Submit (JS-Controlled) */
+.thank-you-footer.hidden {
+    display: none;
+}
+
+/* RTL Support for Arabic */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl .survey-main,
+.rtl .question label,
+.rtl .options,
+.rtl .option-item,
+.rtl .fact {
+    text-align: right;
+}
+
+.rtl .option-item {
+    flex-direction: row-reverse; /* Flip input-text order */
+}
+
+.rtl input[type="radio"],
+.rtl input[type="checkbox"] {
+    margin-left: 12px;
+    margin-right: 0; /* Flip margins */
+}
+
+.rtl .select-styled {
+    background-position: left 12px center; /* Arrow on left in RTL */
+    padding-left: 40px;
+    padding-right: 15px;
+}
+
+.rtl .logo-container {
+    flex-direction: row-reverse; /* Logos swap: right becomes left */
+}
+
+.rtl .left-logo {
+    order: 2; /* Moves left logo to right in RTL */
+}
+
+.rtl .right-logo {
+    order: 1; /* Moves right logo to left in RTL */
+}
+
+.rtl .section-header {
+    flex-direction: row-reverse; /* Step badge on left in RTL */
+}
+
+.rtl .thank-you-footer h2 {
+    flex-direction: row-reverse;
+}
+
+/* Mobile RTL Adjustments (iPhone SE/6/7/8, A51) */
+@media (max-width: 375px) {
+    .rtl .header-content {
+        text-align: center; /* Center in RTL stack */
+    }
+    
+    .rtl .logo-container {
+        justify-content: center; /* Center logos in RTL */
+        gap: 8px; /* Small gap in RTL */
+    }
+}
+
+/* Ensure no overlap in RTL on small screens */
+.rtl .title-section h1,
+.rtl .title-section p {
+    word-break: break-word; /* Break long Arabic words */
+}
+
+.option-item label {
+    cursor: pointer;
+    pointer-events: auto; /* Ensures clicks work */
+    user-select: none; /* Prevents text selection on tap */
+}
+
+.option-item input[type="radio"] {
+    pointer-events: auto; /* Radio clickable */
+    margin-right: 8px; /* Space from text */
+}
