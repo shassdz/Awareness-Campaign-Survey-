@@ -16,8 +16,8 @@
                 <img src="Logo.jpg" alt="Logo Right" class="logo right-logo" onerror="this.style.display='none';">
                 </div>
                 <div class="title-section">
-                    <h1 data-en="Empower Your Health: Ejust's Vaccination Awareness Survey" data-ar="تمكين صحتك: استطلاع وعي التطعيم في مصر">
-                        <i class="fas fa-shield-virus"></i> Empower Your Health: Ejust's Vaccination Awareness Survey
+                    <h1 data-en="Empower Your Health: Egypt's Vaccination Awareness Survey" data-ar="تمكين صحتك: استطلاع وعي التطعيم في مصر">
+                        <i class="fas fa-shield-virus"></i> Empower Your Health: Egypt's Vaccination Awareness Survey
                     </h1>
                     <p data-en="Your opinions help build a stronger, healthier Egypt. This survey takes just 5 minutes." data-ar="آراؤك تساعد في بناء مصر أقوى وأصح. يستغرق الاستطلاع 5 دقائق فقط.">Your opinions help build a stronger, healthier Egypt. This survey takes just 5 minutes.</p>
                     <p data-en="Vaccines save lives — join thousands in protecting our communities." data-ar="اللقاحات تنقذ الأرواح — انضم إلى آلاف في حماية مجتمعاتنا.">Vaccines save lives — join thousands in protecting our communities.</p>
@@ -49,7 +49,7 @@
                                             <textarea class="open-answer" name="name" data-en="write your answer here..." data-ar="اكتب اجابتك هنا..." placeholder="write your answer here..." required></textarea></div>
                         <div class="question phone-question">
                           <h3 name="q2" data-en="2. Your Phone Number" data-ar="2. رقم الهاتف"><span data-en="2. Your Phone Number" data-ar="٢. رقم الهاتف">2. Your Phone Number</span> <span class="required" data-en="*" data-ar="*">*</span></h3>
-                            <p class="reminder" data-en="This phone number will be used for the purposes of this survey only. Complete confidentiality will be maintained, and the data will not be shared or used for any other purpose."data-ar="رقم الهاتف يُستخدم لأغراض هذا الاستبيان فقط. سيتم الحفاظ على السرية التامة، ولن يتم مشاركة البيانات أو استخدامها لأي غرض آخر.">This phone number will be used for the purposes of this survey only. Complete confidentiality will be maintained, and the data will not be shared or used for any other purpose.</p>
+                          <p class="reminder" data-en="This phone number will be used for the purposes of this survey only. Complete confidentiality will be maintained, and the data will not be shared or used for any other purpose."data-ar="رقم الهاتف يُستخدم لأغراض هذا الاستبيان فقط. سيتم الحفاظ على السرية التامة، ولن يتم مشاركة البيانات أو استخدامها لأي غرض آخر.">This phone number will be used for the purposes of this survey only. Complete confidentiality will be maintained, and the data will not be shared or used for any other purpose.</p>
   <div class="phone-field">
                             <input type="tel" name="phone" data-en="Enter your phone number..." data-ar="ادخل رقم هاتفك..." placeholder="Enter your phone number..." pattern="[0-9]{10,15}" title="Please enter a valid phone number (10–15 digits)" required>
   </div>
@@ -57,6 +57,7 @@
                     <div class="question fade-in">
                                                 <label data-en="3. Age" data-ar="3. العمر">3. Age</label>
                         <div class="options">
+                                                    <label class="option-item" data-en="Less than 18 years old" data-ar="أقل من 18 سنة"><input type="radio" name="age" value="-18"> Less than 18 years old</label>
                                                     <label class="option-item" data-en="18 - 24 years" data-ar="18 - 24 سنه"><input type="radio" name="age" value="18-24"> 18 - 24 years</label>
                                                     <label class="option-item" data-en="25 - 34 years" data-ar="25 - 34 سنة"><input type="radio" name="age" value="25-34"> 25 - 34 years</label>
                                                     <label class="option-item" data-en="35 - 44 years" data-ar="35 - 44 سنة"><input type="radio" name="age" value="35-44"> 35 - 44 years</label>
@@ -140,22 +141,36 @@
 
 </div>
 </div>
-                        <div class="question fade-in">
-                            <label data-en="9. What is your typical average blood pressure reading?" data-ar="9. ما هو معدل ضغط الدم المعتاد لديك؟">9. Your Blood Pressure</label>
-                            <input type="text" name="blood_pressure" class="open-answer" data-en="Enter your blood pressure..." data-ar="أدخل ضغط دمك..." placeholder="Enter your blood pressure..." >
-                        </div>
-                        <div class="question fade-in">
-                            <label data-en="10. Blood Glucose Level" data-ar="10. مستوى السكر في الدم">10. Blood Glucose Level</label>
-                            <input type="text" name="blood_glucose" class="open-answer" data-en="Enter your blood glucose level..." data-ar="أدخل مستوى السكر في دمك..." placeholder="Enter your blood glucose level..." >
-                        </div>
-                        <div class="question fade-in">
-                            <label data-en="11. Height (cm)" data-ar="11. الطول (سم)">11. Height (cm)</label>
-                            <input type="number" name="height" class="open-answer" data-en="Enter your height in cm..." data-ar="أدخل طولك بالسنتيمتر..." placeholder="Enter your height in cm..." min="0" >
-                        </div>
-                        <div class="question fade-in">
-                            <label data-en="12. Weight (kg)" data-ar="12. الوزن (كجم)">12. Weight (kg)</label>
-                            <input type="number" name="weight" class="open-answer" data-en="Enter your weight in kg..." data-ar="أدخل وزنك بالكيلوغرام..." placeholder="Enter your weight in kg..." min="0" >
-                        </div>
+<div class="question fade-in">
+    <label data-en="9. What is your typical average blood pressure reading?" data-ar="9. ما هو متوسط ​​ضغط الدم لديك عادة؟">9. What is your typical average blood pressure reading?</label>
+<div class="options">
+        <label class="option-item" for="normal" data-en="Normal (less than 120/80 mmHg)" data-ar="طبيعي (أقل من 120/80 مم زئبق)"><input type="radio" id="normal" name="blood-pressure" value="normal"> Normal (less than 120/80 mmHg)</input></label>
+        <label class="option-item" for="elevated" data-en="Elevated (120–129/<80 mmHg)" data-ar="مرتفع قليلاً (120–129/<80 مم زئبق)"><input type="radio" id="elevated" name="blood-pressure" value="elevated"> Elevated (120–129/&lt;80 mmHg)</input></label>
+        <label class="option-item" for="stage1" data-en="High Blood Pressure, Stage 1 (130–139/80–89 mmHg)" data-ar="ارتفاع ضغط الدم، المرحلة الأولى (130–139/80–89 مم زئبق)"><input type="radio" id="stage1" name="blood-pressure" value="stage1"> High Blood Pressure, Stage 1 (130–139/80–89 mmHg)</input></label>
+        <label class="option-item" for="stage2" data-en="High Blood Pressure, Stage 2 (140-90 mmHg or higher)" data-ar="ارتفاع ضغط الدم، المرحلة الثانية (140/90 مم زئبق أو أكثر)"><input type="radio" id="stage2" name="blood-pressure" value="stage2"> High Blood Pressure, Stage 2 (140/90 mmHg or higher)</input></label>
+        <label class="option-item" for="Hypertensive-crisis" data-en="Hypertensive Crisis (higher than 180/120 mmHg)" data-ar="أزمة ارتفاع ضغط الدم (أعلى من 180/120 مم زئبق)"><input type="radio" id="Hypertensive-crisis" name="blood-pressure" value="crisis"> Hypertensive Crisis (higher than 180/120 mmHg)</input></label>
+        <label class="option-item" for="unknown" data-en="I don't know" data-ar="لا أعلم"><input type="radio" id="unknown" name="blood-pressure" value="unknown"> I don't know</input></label>
+    </div>
+</div>
+<div class="question fade-in">
+    <label data-en="10. What was your most recent fasting blood glucose reading?" data-ar="10. ما كانت آخر قراءة لديك لسكر الدم أثناء الصيام؟">10. What was your most recent fasting blood glucose reading?</label>
+    <div class="options">
+        <label class="option-item" for="glucose-normal" data-en="Less than 100 mg/dL (Normal)" data-ar="أقل من 100 ملغ/دل (طبيعي)"><input type="radio" id="glucose-normal" name="fasting-glucose" value="normal"> Less than 100 mg/dL (Normal)</input></label>
+        <label class="option-item" for="glucose-prediabetes" data-en="100–125 mg/dL (Prediabetes)" data-ar="100–125 ملغ/دل (ما قبل السكري)"><input type="radio" id="glucose-prediabetes" name="fasting-glucose" value="prediabetes"> 100–125 mg/dL (Prediabetes)</input></label>
+        <label class="option-item" for="glucose-diabetes" data-en="126 mg/dL or higher (Diabetes)" data-ar="126 ملغ/دل أو أكثر (سكري)"><input type="radio" id="glucose-diabetes" name="fasting-glucose" value="diabetes"> 126 mg/dL or higher (Diabetes)</input></label>
+        <label class="option-item" for="glucose-unknown" data-en="I don't know" data-ar="لا أعلم"><input type="radio" id="glucose-unknown" name="fasting-glucose" value="unknown"> I don't know</input></label>
+    </div>
+</div>
+
+<div class="question fade-in">
+    <label data-en="11. What was the result of your most recent HbA1c blood test?" data-ar="11. ما كانت نتيجة آخر اختبار HbA1c لديك؟">11. What was the result of your most recent HbA1c blood test?</label>
+    <div class="options">
+        <label class="option-item" for="hba1c-normal" data-en="Below 5.7% (Normal)" data-ar="أقل من 5.7٪ (طبيعي)"><input type="radio" id="hba1c-normal" name="hba1c" value="normal"></input> Below 5.7% (Normal)</label>
+        <label class="option-item" for="hba1c-prediabetes" data-en="5.7%–6.4% (Prediabetes)" data-ar="5.7٪–6.4٪ (ما قبل السكري)"><input type="radio" id="hba1c-prediabetes" name="hba1c" value="prediabetes"></input> 5.7%–6.4% (Prediabetes)</label>
+        <label class="option-item" for="hba1c-diabetes" data-en="6.5% or higher (Diabetes)" data-ar="6.5٪ أو أعلى (سكري)"><input type="radio" id="hba1c-diabetes" name="hba1c" value="diabetes"></input> 6.5% or higher (Diabetes)</label>
+        <label class="option-item" for="hba1c-unknown" data-en="I don't know" data-ar="لا أعلم"><input type="radio" id="hba1c-unknown" name="hba1c" value="unknown"></input> I don't know</label>
+    </div>
+</div>
                     <p class="fact" data-en="Fact: Tailored vaccines based on age and location prevent outbreaks across Egypt." data-ar="حقيقة: اللقاحات المصممة حسب العمر والموقع تمنع انتشار الأمراض في جميع أنحاء مصر.">Fact: Tailored vaccines based on age and location prevent outbreaks across Egypt.</p>
                 </section>
 
@@ -165,7 +180,7 @@
                                                 <span class="section-step" data-en="Step 2/4" data-ar="الخطوة 2/4">Step 2/4</span>
                     </div>
                     <div class="question fade-in">
-                        <label name="q7" data-en="13. How would you rate your knowledge of the importance of vaccinations for disease prevention?" data-ar="13. كيف تقيم معرفتك بأهمية التطعيمات للوقاية من الأمراض؟">13. How would you rate your knowledge of the importance of vaccinations for disease prevention?</label>
+                        <label name="q7" data-en="12. How would you rate your knowledge of the importance of vaccinations for disease prevention?" data-ar="12. كيف تقيم معرفتك بأهمية التطعيمات للوقاية من الأمراض؟">12. How would you rate your knowledge of the importance of vaccinations for disease prevention?</label>
                         <div class="options">
                             <label class="option-item" data-en="Excellent" data-ar="ممتاز"><input type="radio" name="knowledge" value="excellent"> Excellent</label>
                             <label class="option-item" data-en="Good" data-ar="جيد"><input type="radio" name="knowledge" value="good"> Good</label>
@@ -174,7 +189,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label name="q8" data-en="14. Which of these sources do you trust most for vaccine information? (Select all that apply)" data-ar="14. أي من هذه المصادر تثق بها أكثر للحصول على معلومات حول اللقاحات؟ (اختر كل ما ينطبق)">14. Which of these sources do you trust most for vaccine information? (Select all that apply)</label>
+                        <label name="q8" data-en="13. Which of these sources do you trust most for vaccine information? (Select all that apply)" data-ar="13. أي من هذه المصادر تثق بها أكثر للحصول على معلومات حول اللقاحات؟ (اختر كل ما ينطبق)">13. Which of these sources do you trust most for vaccine information? (Select all that apply)</label>
                         <div class="options">
                             <label class="option-item" data-en="Doctors and healthcare centers" data-ar="الأطباء والمراكز الصحية"><input type="checkbox" name="sources[]" value="doctors"> Doctors and healthcare centers</label>
                             <label class="option-item" data-en="The internet and social media" data-ar="الإنترنت ووسائل التواصل الاجتماعي"><input type="checkbox" name="sources[]" value="internet"> The internet and social media</label>
@@ -191,7 +206,7 @@
                                                 <span class="section-step" data-en="Step 3/4" data-ar="الخطوة 3/4">Step 3/4</span>
                     </div>
                     <div class="question fade-in">
-                        <label name="q9" data-en="15. Do you believe vaccines are generally safe?" data-ar="15. هل تعتقد أن اللقاحات آمنة بشكل عام؟">15. Do you believe vaccines are generally safe?</label>
+                        <label name="q9" data-en="14. Do you believe vaccines are generally safe?" data-ar="14. هل تعتقد أن اللقاحات آمنة بشكل عام؟">14. Do you believe vaccines are generally safe?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes, very safe" data-ar="نعم، آمنة جدًا"><input type="radio" name="belief" value="yes_absolutely">Yes, very safe</label>
                             <label class="option-item" data-en="Generally yes, but some concerns" data-ar="نعم بشكل عام، لكن هناك بعض المخاوف"><input type="radio" name="belief" value="yes_concerns">Generally yes, but some concerns</label>
@@ -200,7 +215,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label name="q10" data-en="16. What concerns most influence vaccine hesitancy for you? (select up to 2)" data-ar="16. ما هي المخاوف التي تؤثر أكثر على ترددك في أخذ اللقاح؟ (اختر حتى ٢)">16. What concerns most influence vaccine hesitancy for you? (select up to 2)</label>
+                        <label name="q10" data-en="15. What concerns most influence vaccine hesitancy for you? (select up to 2)" data-ar="15. ما هي المخاوف التي تؤثر أكثر على ترددك في أخذ اللقاح؟ (اختر حتى ٢)">15. What concerns most influence vaccine hesitancy for you? (select up to 2)</label>
                         <div class="options">
                             <label class="option-item" data-en="Side effects" data-ar="الآثار الجانبية"><input type="checkbox" name="hesitation[]" value="side_effects">Side effects</label>
                             <label class="option-item" data-en="Long-term health effects unknown" data-ar="الآثار الصحية طويلة المدى غير معروفة"><input type="checkbox" name="hesitation[]" value="lack_info">Long-term health effects unknown</label>
@@ -212,7 +227,7 @@
                     </div>
 
                     <div class="question fade-in">
-                        <label name="q11" data-en="17. Have you received all the recommended vaccinations based on your age and health condition?" data-ar="17. هل تلقيت جميع التطعيمات الموصى بها بناءً على عمرك وحالتك الصحية؟">17. Have you received all the recommended vaccinations based on your age and health condition?</label>
+                        <label name="q11" data-en="16. Have you received all the recommended vaccinations based on your age and health condition?" data-ar="16. هل تلقيت جميع التطعيمات الموصى بها بناءً على عمرك وحالتك الصحية؟">16. Have you received all the recommended vaccinations based on your age and health condition?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes" data-ar="نعم"><input type="radio" name="received" value="yes"> Yes</label>
                             <label class="option-item" data-en="No" data-ar="لا"><input type="radio" name="received" value="no"> No</label>
@@ -221,7 +236,7 @@
                     </div>
 
                         <div class="question fade-in">
-                        <label name="q12" data-en="18.  Do you believe vaccines can cause the disease they protect against?" data-ar="18٤. هل تعتقد أن اللقاحات يمكن أن تسبب المرض الذي تحمي منه؟">18.  Do you believe vaccines can cause the disease they protect against?</label>
+                        <label name="q12" data-en="17.  Do you believe vaccines can cause the disease they protect against?" data-ar="17٤. هل تعتقد أن اللقاحات يمكن أن تسبب المرض الذي تحمي منه؟">17.  Do you believe vaccines can cause the disease they protect against?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes, sometimes" data-ar="نعم، أحيانًا"><input type="radio" name="cause" value="yes"> Yes, sometimes</label>
                             <label class="option-item" data-en="No, not sure" data-ar="لا، لست متأكدًا"><input type="radio" name="cause" value="no"> No, not sure</label>
@@ -229,7 +244,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q13" data-en="19. Do you think the current awareness campaigns about vaccinations are sufficient?" data-ar="19. هل تعتقد أن حملات التوعية الحالية حول التطعيمات كافية؟">19. Do you think the current awareness campaigns about vaccinations are sufficient?</label>
+                        <label type="text" name="q13" data-en="18. Do you think the current awareness campaigns about vaccinations are sufficient?" data-ar="18. هل تعتقد أن حملات التوعية الحالية حول التطعيمات كافية؟">18. Do you think the current awareness campaigns about vaccinations are sufficient?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes, they are very sufficient" data-ar="نعم، إنها كافية جدًا"><input type="radio" name="campaigns" value="very_sufficient"> Yes, they are very sufficient</label>
                             <label class="option-item" data-en="Yes, but they need improvement" data-ar="نعم، لكنها تحتاج إلى تحسين"><input type="radio" name="campaigns" value="need_improvement"> Yes, but they need improvement</label>
@@ -237,7 +252,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q14" data-en="20. In your opinion, what is the most important factor that would encourage you to take a vaccine? (Rank 1-5 or select top)" data-ar="20. في رأيك، ما هو العامل الأكثر أهمية الذي قد يشجعك على أخذ اللقاح؟ (رتب من ١ إلى ٥ أو اختر الأهم)">20. In your opinion, what is the most important factor that would encourage you to take a vaccine? (Rank 1-5 or select top)</label>
+                        <label type="text" name="q14" data-en="19. In your opinion, what is the most important factor that would encourage you to take a vaccine? (Rank 1-5 or select top)" data-ar="19. في رأيك، ما هو العامل الأكثر أهمية الذي قد يشجعك على أخذ اللقاح؟ (رتب من ١ إلى ٥ أو اختر الأهم)">19. In your opinion, what is the most important factor that would encourage you to take a vaccine? (Rank 1-5 or select top)</label>
                         <div class="options">
                             <label class="option-item" data-en="A detailed explanation of its health benefits" data-ar="شرح مفصل لفوائده الصحية"><input type="radio" name="encourage" value="benefits"> A detailed explanation of its health benefits</label>
                             <label class="option-item" data-en="Reducing concerns about side effects" data-ar="تقليل المخاوف بشأن الآثار الجانبية"><input type="radio" name="encourage" value="side_effects"> Reducing concerns about side effects</label>
@@ -247,7 +262,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q15" data-en="21. Would you be more likely to take a vaccine if it was recommended by a trusted doctor or healthcare professional?" data-ar="21. هل ستكون أكثر استعدادًا لأخذ اللقاح إذا أوصى به طبيب أو مختص صحي موثوق؟">21. Would you be more likely to take a vaccine if it was recommended by a trusted doctor or healthcare professional?</label>
+                        <label type="text" name="q15" data-en="20. Would you be more likely to take a vaccine if it was recommended by a trusted doctor or healthcare professional?" data-ar="20. هل ستكون أكثر استعدادًا لأخذ اللقاح إذا أوصى به طبيب أو مختص صحي موثوق؟">20. Would you be more likely to take a vaccine if it was recommended by a trusted doctor or healthcare professional?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes, definitely" data-ar="نعم، بالتأكيد"><input type="radio" name="recommendation" value="yes_definitely"> Yes, definitely</label>
                             <label class="option-item" data-en="Maybe, it depends on the information provided" data-ar="ربما، حسب المعلومات المقدمة"><input type="radio" name="recommendation" value="maybe"> Maybe, it depends on the information provided</label>
@@ -256,7 +271,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q16" data-en="22. Have you ever delayed or skipped a recommended vaccine? If yes, what was the reason? (If yes, specify below)" data-ar="22. هل سبق أن أجلت أو تخطيت لقاحًا موصى به؟ إذا كانت الإجابة نعم، ما السبب؟ (حدد أدناه)">22. Have you ever delayed or skipped a recommended vaccine? If yes, what was the reason? (If yes, specify below)</label>
+                        <label type="text" name="q16" data-en="21. Have you ever delayed or skipped a recommended vaccine? If yes, what was the reason? (If yes, specify below)" data-ar="21. هل سبق أن أجلت أو تخطيت لقاحًا موصى به؟ إذا كانت الإجابة نعم، ما السبب؟ (حدد أدناه)">21. Have you ever delayed or skipped a recommended vaccine? If yes, what was the reason? (If yes, specify below)</label>
                         <div class="options">
                             <label class="option-item" data-en="No, I always take my vaccines on time" data-ar="لا، أتناول جميع اللقاحات في وقتها دائمًا"><input type="radio" name="delayed" value="no"> No, I always take my vaccines on time</label>
                             <label class="option-item" data-en="Yes, due to fear of side effects" data-ar="نعم، بسبب الخوف من الآثار الجانبية"><input type="radio" name="delayed" value="side_effects"> Yes, due to fear of side effects</label>
@@ -274,7 +289,7 @@
                                                 <span class="section-step" data-en="Step 4/4" data-ar="الخطوة 4/4">Step 4/4</span>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q17" data-en="23. What is the most effective way to raise awareness about the importance of vaccination? (Select all that apply)" data-ar="22. ما هي الطريقة الأكثر فعالية لرفع الوعي بأهمية التطعيم؟ (اختر كل ما ينطبق)">23. What is the most effective way to raise awareness about the importance of vaccination? (Select all that apply)</label>
+                        <label type="text" name="q17" data-en="22. What is the most effective way to raise awareness about the importance of vaccination? (Select all that apply)" data-ar="22. ما هي الطريقة الأكثر فعالية لرفع الوعي بأهمية التطعيم؟ (اختر كل ما ينطبق)">22. What is the most effective way to raise awareness about the importance of vaccination? (Select all that apply)</label>
                         <div class="options">
                             <label class="option-item" data-en="Social media" data-ar="وسائل التواصل الاجتماعي"><input type="checkbox" name="awareness[]" value="social"> Social media</label>
                             <label class="option-item" data-en="Media campaigns (TV, radio)" data-ar="حملات إعلامية (تلفزيون، راديو)"><input type="checkbox" name="awareness[]" value="media"> Media campaigns (TV, radio)</label>
@@ -283,7 +298,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q18" data-en="24. If a contagious disease spreads and a vaccine becomes available, would you take it immediately?" data-ar="26. إذا انتشر مرض معدٍ وأصبح اللقاح متاحًا، هل ستأخذه فورًا؟">24. If a contagious disease spreads and a vaccine becomes available, would you take it immediately?</label>
+                        <label type="text" name="q18" data-en="23. If a contagious disease spreads and a vaccine becomes available, would you take it immediately?" data-ar="23. إذا انتشر مرض معدٍ وأصبح اللقاح متاحًا، هل ستأخذه فورًا؟">23. If a contagious disease spreads and a vaccine becomes available, would you take it immediately?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes, immediately to protect myself and those around me" data-ar="نعم، فورًا لحماية نفسي ومن حولي"><input type="radio" name="immediate" value="yes_immediate"> Yes, immediately to protect myself and those around me</label>
                             <label class="option-item" data-en="Yes, but only after confirming its effectiveness and side effects" data-ar="نعم، ولكن بعد التأكد من فعاليته وآثاره الجانبية"><input type="radio" name="immediate" value="yes_confirm"> Yes, but only after confirming its effectiveness and side effects</label>
@@ -292,7 +307,7 @@
                         </div>
                     </div>
                     <div class="question fade-in">
-                        <label type="text" name="q19" data-en="25. Did you know that there are recommended vaccines before traveling to certain countries to prevent diseases?" data-ar="25. هل كنت تعلم أن هناك لقاحات موصى بها قبل السفر إلى بعض الدول للوقاية من الأمراض؟">25. Did you know that there are recommended vaccines before traveling to certain countries to prevent diseases?</label>
+                        <label type="text" name="q19" data-en="24. Did you know that there are recommended vaccines before traveling to certain countries to prevent diseases?" data-ar="24. هل كنت تعلم أن هناك لقاحات موصى بها قبل السفر إلى بعض الدول للوقاية من الأمراض؟">24. Did you know that there are recommended vaccines before traveling to certain countries to prevent diseases?</label>
                         <div class="options">
                             <label class="option-item" data-en="Yes, and I am aware of their types and importance" data-ar="نعم، وأنا على علم بأنواعها وأهميتها"><input type="radio" name="travel" value="yes_details"> Yes, and I am aware of their types and importance</label>
                             <label class="option-item" data-en="Yes, but I don’t know many details about them" data-ar="نعم، لكن لا أعرف الكثير من التفاصيل عنها"><input type="radio" name="travel" value="yes_no_details"> Yes, but I don’t know many details about them</label>
@@ -354,6 +369,4 @@ document.getElementById("lang-toggle").addEventListener("click", function() {
 });
 </script>
 </body>
-
 </html>
-
