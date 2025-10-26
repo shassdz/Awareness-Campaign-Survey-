@@ -426,6 +426,17 @@ input[type="text"]:focus {
     display: none;
 }
 
+  .reminder {
+    background-color: #f8fffa;
+    border: 1px solid #d3e9d2;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
 /* Very Small Mobile (iPhone SE: ≤414px) – Stack Header, Compact Logos */
 @media (max-width: 414px) {
     .header-content {
@@ -734,3 +745,4 @@ input[type="text"]:focus {
     pointer-events: auto; /* Radio clickable */
     margin-right: 8px; /* Space from text */
 }
+
