@@ -144,4 +144,5 @@ if (footer) {
   // Reset form fields on page load
   window.addEventListener("load", () => form.reset());
   updateProgress();
+
 });
