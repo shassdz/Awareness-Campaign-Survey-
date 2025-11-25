@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       questions.forEach((question) => {
         let questionComplete = true;
+        
 
         // Radio
         const radios = question.querySelectorAll('input[type="radio"]');
@@ -145,5 +146,3 @@ if (footer) {
   window.addEventListener("load", () => form.reset());
   updateProgress();
 });
-
-
