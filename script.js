@@ -142,9 +142,8 @@ if (footer) {
 
   
   // Reset form fields on page load
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form"); // <-- ADD THIS LINE
-  if (form) form.reset();
+  window.addEventListener("load", () => form.reset());
+  updateProgress();
 });
 
 
